@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <p class="faq-intro">Have questions? We have answers. If you need more information, feel free to <a
+                href="{% url 'contact-us-en' %}">contact us</a>.</p>
+
+        <div class="faq-list">
+            {% for faq in faqs %}
+                <div class="faq-item">
+                    <h3 class="faq-question">{{ faq.title }}</h3>
+                    <p class="faq-answer">{{ faq.answer }}</p>
+                </div>
+            {% empty %}
+                <p class="faq-empty">No FAQs available at the moment. Please check back later or <a
+                        href="{% url 'contact-us-en' %}">contact us</a>.</p>
+            {% endfor %}
+        </div>
+
+        <div class="faq-contact-cta">
+            <p>Still have questions? <a href="{% url 'contact-us-en' %}" class="faq-contact-link">Contact us</a> for more
+                help.</p>
+        </div>
+    </div>
+{% endblock %}

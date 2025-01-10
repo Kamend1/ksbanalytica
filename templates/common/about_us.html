@@ -1,0 +1,61 @@
+{% extends "common/base.html" %}
+
+{% block title %}
+    {% if LANGUAGE_CODE == 'en' %}
+        About Competences
+    {% else %}
+        За Компетенциите
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="competence-container">
+        <h1 class="competence-title">
+            {% if LANGUAGE_CODE == 'en' %}
+                About Competences
+            {% else %}
+                За Компетенциите
+            {% endif %}
+        </h1>
+        <div class="competence-grid">
+            {% for competence in competences %}
+                <div class="competence-card">
+                    {% if competence.image %}
+                        <div class="competence-card-image">
+                            <img src="{{ competence.image.url }}" alt="{{ competence.title }}">
+                        </div>
+                    {% endif %}
+                    <div class="competence-card-content">
+                        <h2 class="competence-card-title">{{ competence.title }}</h2>
+                        <p class="competence-card-description">{{ competence.description }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="competence-empty">
+                    {% if LANGUAGE_CODE == 'en' %}
+                        No competences found.
+                    {% else %}
+                        Няма намерени компетенции.
+                    {% endif %}
+                </p>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination Controls -->
+        {% if is_paginated %}
+            <div class="competence-pagination">
+                {% if page_obj.has_previous %}
+                    <a class="competence-page-link" href="?page=1">&laquo; First</a>
+                    <a class="competence-page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <span class="competence-page-info">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+                {% if page_obj.has_next %}
+                    <a class="competence-page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="competence-page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

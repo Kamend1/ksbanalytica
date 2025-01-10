@@ -1,0 +1,110 @@
+/* Competence Page Styles */
+.competence-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.competence-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #4A4A4A;
+}
+
+/* Grid and Cards */
+.competence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.competence-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competence-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.competence-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.competence-card-content {
+    padding: 15px;
+}
+
+.competence-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.competence-card-description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.competence-card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #5285de;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.competence-card-button:hover {
+    background-color: #3a6bcc;
+}
+
+/* Pagination Styles */
+.competence-pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.competence-page-link {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #5285de;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.competence-page-link:hover {
+    background-color: #5285de;
+    color: #ffffff;
+}
+
+.competence-page-info {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1rem;
+    color: #666666;
+}
+
+.competence-empty {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #666666;
+    margin-top: 30px;
+}

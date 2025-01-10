@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}KSB Analytica{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+          content="KSB Analytica: Providing top-notch analytics, services, and insights to drive your success.">
+    <meta name="keywords" content="analytics, data analysis, services, KSB Analytica, insights, business solutions">
+    <meta name="author" content="KSB Analytica">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="KSB Analytica">
+    <meta property="og:description" content="KSB Analytica: Transforming data into actionable insights.">
+    <meta property="og:image" content="{% static 'images/social-preview.png' %}">
+    <meta property="og:url" content="https://ksbanalytica.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KSB Analytica">
+    <meta name="twitter:description" content="Providing data-driven solutions to businesses worldwide.">
+    <meta name="twitter:image" content="{% static 'images/social-preview.png' %}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+<header>
+    <p>Current Language: {{ LANGUAGE_CODE }}</p>
+    <p>Active Language (context processor): {{ LANGUAGE_CODE }}</p>
+    <div class="header-top">
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="language-toggle">
+            <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <input type="hidden" name="lang" value="bg">
+                <button type="submit" class="toggle-btn" {% if LANGUAGE_CODE == 'bg' %}disabled{% endif %}>
+                    BG
+                </button>
+            </form>
+            <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <input type="hidden" name="lang" value="en">
+                <button type="submit" class="toggle-btn" {% if LANGUAGE_CODE == 'en' %}disabled{% endif %}>
+                    EN
+                </button>
+            </form>
+        </div>
+
+
+    </div>
+    <div class="logo">
+        <img src="{% static 'images/Color logo - no background.png' %}" alt="KSB Analytica Logo">
+    </div>
+    {% include 'common/nav.html' %}
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>&copy; 2023 by KSB Analytica. Proudly created with Django.</p>
+    <p>Contact: <a href="mailto:kamen.dimitrov@ksbanalytica.com">kamen.dimitrov@ksbanalytica.com</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "common/base.html" %}
+
+{% block title %}
+    Our Services
+{% endblock %}
+
+{% block content %}
+    <header class="services-header">
+        <h1>Our Services</h1>
+        <p>We have the knowledge and experience to meet and exceed your expectations, and offer a variety of services
+            customized to fit your specific needs. Learn more about the improvements I can help you achieve, and contact
+            me today.</p>
+        <p>Providing value to companies looking to improve their financial health, make informed decisions, and grow
+            their businesses.</p>
+    </header>
+
+    <section class="services-container">
+        <div class="services-grid">
+            {% for service in services %}
+                <div class="services-card">
+                    {% if service.image %}
+                        <div class="services-card-image">
+                            <img src="{{ service.image.url }}" alt="{{ service.title }}">
+                        </div>
+                    {% endif %}
+                    <div class="services-card-content">
+                        <h2 class="services-card-title">{{ service.title }}</h2>
+                        <p class="services-card-description">{{ service.description }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="services-empty">No services found.</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

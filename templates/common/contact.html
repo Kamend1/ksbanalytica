@@ -1,0 +1,31 @@
+{% extends 'common/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+    <div class="contact-container">
+        <div class="contact-card">
+            <div class="contact-header">
+                <i class="fas fa-envelope"></i>
+                <h4>Get in Touch</h4>
+            </div>
+            <div class="contact-body">
+                <p class="contact-text">
+                    We would love to hear from you! Please fill out the form below, and we’ll get back to you as soon as
+                    possible.
+                </p>
+
+                <form action="{% url 'contact-us-en' %}" method="post" class="contact-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="contact-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}

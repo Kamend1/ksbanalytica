@@ -1,0 +1,121 @@
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Adjust for header and footer height */
+    padding: 20px;
+    background-color: rgb(239, 236, 226); /* Soft beige background */
+}
+
+.contact-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgb(255, 255, 255); /* White background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    padding: 20px; /* Added padding for symmetry */
+    box-sizing: border-box; /* Ensure consistent box model */
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the header content */
+    padding: 20px;
+    background-color: rgb(16, 63, 84); /* Bluish-green */
+    color: rgb(255, 255, 255); /* White text */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.contact-header i {
+    font-size: 2.5rem;
+    margin-right: 10px;
+}
+
+.contact-header h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1rem;
+    color: rgb(64, 64, 64); /* Neutral text */
+    margin-bottom: 20px;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased spacing for symmetry */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(209, 217, 246); /* Light pastel blue */
+    border-radius: 5px;
+    font-size: 1rem;
+    color: rgb(64, 64, 64); /* Neutral text */
+    background-color: rgb(255, 255, 255); /* White background */
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgb(16, 63, 84); /* Bluish-green focus */
+    outline: none;
+}
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255); /* White text */
+    background-color: rgb(16, 63, 84); /* Bluish-green */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Full-width for symmetry */
+}
+
+.contact-submit i {
+    margin-right: 8px;
+}
+
+.contact-submit:hover {
+    background-color: rgb(25, 85, 110); /* Darker hover */
+    transform: scale(1.05);
+}
+
+/* Contact Submitted Page */
+.contact-submitted-container {
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(239, 236, 226); /* Soft beige */
+}
+
+.contact-submitted-container h2 {
+    font-size: 2rem;
+    color: rgb(16, 63, 84); /* Bluish-green */
+    margin-bottom: 20px;
+}
+
+.contact-submitted-container p {
+    font-size: 1rem;
+    color: rgb(64, 64, 64); /* Neutral text */
+}
